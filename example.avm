@@ -1,0 +1,52 @@
+*int a = [15, 15, 15];
+int i;
+for (int i = 0; i =< 2; i += 1)
+    a[i] = i;
+
+
+
+LABEL l1
+    REG_ASSIGN r1 = ALLOC 12
+    REG_ASSIGN r2 = ADD a 4
+    REG_ASSIGN r3 = ADD a 8
+    DEREF_ASSIGN r1 15
+    DEREF_ASSIGN r2 15
+    DEREF_ASSIGN r3 15
+    REG_ASSIGN i = 0
+
+LABEL l2
+    JUMP_GREATER_EQUAL 2 i l3
+    REG_ASSIGN k: ADD a i
+    ASSIGN_DEREF k i
+    REG_ASSIGN i: ADD i 1
+    JUMP l2
+
+LABEL l3:
+
+
+int a = 15;
+a + 5;
+
+LABEL l1
+    REG_ASSIGN r1 = 15
+    ADD r1 5
+
+
+ALLOC val
+LABEL label_name
+REG_ASSIGN register = RETURNING_INSTR 
+DEREF val
+DEREF_ASSIGN val val
+JUMP label_name
+JUMP_GREATER val val label_name
+JUMP_EQUAL val val label_name
+JUMP_GREATER_EQUAL val val label_name
+GREATER val val
+GREATER_EQUAL val val
+ADD val val
+MUL val val
+DIV val val
+POW val val
+SQR val val
+SQRT val val
+POW val val
